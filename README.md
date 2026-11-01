@@ -106,3 +106,13 @@ Implementa las tres propuestas en carpetas separadas. Cada carpeta contiene la c
 3. [mpi_hibrido](mpi_hibrido/README.md): combinar el reparto de IDs con el reparto de ramas dentro de cada tablero.
 
 Entrega también el [informe de resultados](INFORME.md) con los tiempos de la versión secuencial y de las tres implementaciones y conclusiones sustentadas por esas mediciones. Elige **un solo valor de `N` por equipo** con la calibración descrita arriba y usa ese mismo `N` en las tres comparaciones MPI. Agrega `--allow-run-as-root --use-hwthread-cpus --oversubscribe` a `mpiexec` en las tres implementaciones, como en el calibrador. Para MPI, mide el tiempo real desde que empieza el trabajo hasta que llegan todos los resultados; no sumes los tiempos de los procesos como tiempo total.
+
+---
+
+## Archivos agregados en esta solución
+
+- `sudoku_ramas.py`: generación de ramas y backtracking con punto de cancelación (mismo algoritmo que `sudoku.py`).
+- `mpi_comun.py`: protocolo MPI compartido (grupo de ramas con `STOP`, despacho dinámico de IDs).
+- `mpi_por_tableros/mpi_tableros.py`, `mpi_por_ramas/mpi_ramas.py`, `mpi_hibrido/mpi_hibrido.py`: las tres tareas
+  (cada carpeta tiene su README con el comando para ejecutarla con el contenedor).
+- `medir_informe.py`: ejecuta secuencial + 3 MPI con el mismo N, 3 repeticiones, calcula medianas y aceleración.
