@@ -2,7 +2,7 @@
 
 ## Entorno
 
-- Equipo: `COMPLETAR: modelo del portátil/PC, CPU (modelo, núcleos físicos / hilos), RAM, Windows y versión de Docker Desktop`. El contenedor ve `nproc = 16`.
+- Equipo: Portátil Lenovo IdeaPad 5 14ALC05, procesador AMD Ryzen 7 5700U (8 núcleos / 16 hilos, 1,80 GHz base), 16 GB de RAM (15,3 GB usables), Windows 11 Home 25H2 (compilación 26200.9711), Docker Desktop 4.73.1 (Engine 29.4.3). El contenedor ve nproc = 16.
 - Versión del contenedor: `augustosalazar/slim-mpi:2`
 - Cantidad de repeticiones por medición: 3
 - Valor común de `N` elegido: **13** (salida de `detectar_procesos_mpi.py`: "N RECOMENDADO: 13", mediana 1,512 s)
